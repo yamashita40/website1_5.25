@@ -1,0 +1,416 @@
+.header {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 64px;
+  padding: 0 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+}
+
+.logo {
+  flex-shrink: 0;
+  color: #1f1f1f;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+
+  font-size: 14px;
+}
+
+.nav a {
+  color: #1f1f1f;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.header-actions {
+  flex-shrink: 0;
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-actions button {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+/* 搜索按钮 */
+
+.search-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 4px;
+  margin-right: 8px;
+
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.search-btn span:first-child {
+  position: relative;
+}
+
+.search-btn span:first-child::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  background: #1f1f1f;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+
+.search-btn:hover span:first-child::after {
+  width: 100%;
+}
+
+.search-icon {
+  font-size: 16px;
+}
+
+/* 搜索面板 */
+
+.search-panel {
+  position: absolute;
+  top: 0;
+  left: 180px;
+  right: 72px;
+  z-index: 1200;
+
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+  animation: searchSlideIn 0.25s ease;
+}
+
+.search-panel input {
+  flex: 1;
+  height: 38px;
+  padding: 0 14px;
+
+  border: 1px solid #666666;
+  font-size: 15px;
+}
+
+.search-close-btn {
+  padding: 8px 14px;
+
+  border: 1px solid #333333;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+@keyframes searchSlideIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* 购物车按钮 */
+
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 4px;
+
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.cart-btn span:first-child {
+  position: relative;
+}
+
+.cart-btn span:first-child::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  background: #1f1f1f;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+
+.cart-btn:hover span:first-child::after {
+  width: 100%;
+}
+
+.cart-icon {
+  font-size: 17px;
+}
+
+/* 登录按钮 */
+
+.signin-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 0;
+
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.signin-btn span:first-child {
+  position: relative;
+}
+
+.signin-btn span:first-child::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  background: #1f1f1f;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+
+.signin-btn:hover span:first-child::after {
+  width: 100%;
+}
+
+.signin-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #555555;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+/* Surface 页面顶部导航 */
+
+.surface-header {
+  gap: 18px;
+}
+
+.header-divider {
+  width: 2px;
+  height: 26px;
+  flex-shrink: 0;
+
+  background: #262626;
+}
+
+.surface-brand {
+  flex-shrink: 0;
+
+  color: #262626;
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.surface-brand:hover {
+  text-decoration: underline;
+}
+
+.surface-nav {
+  gap: 24px;
+}
+
+.surface-nav a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-arrow {
+  font-size: 12px;
+}
+
+/* =================================
+   第一阶段：窗口稍微缩小
+   顶部栏内容仍然全部显示
+   只缩小间距、字号和左右留白
+   ================================= */
+
+@media (max-width: 1320px) and (min-width: 981px) {
+  .header {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .nav {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .surface-nav {
+    gap: 14px;
+  }
+
+  .surface-brand {
+    font-size: 17px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-actions button {
+    font-size: 13px;
+  }
+
+  .search-btn {
+    margin-right: 0;
+  }
+}
+
+
+/* =================================
+   第二阶段：中等窗口
+   隐藏中间导航和部分文字
+   保留 Microsoft、Surface 标志和右侧图标
+   ================================= */
+
+@media (max-width: 980px) and (min-width: 641px) {
+  .header {
+    height: 56px;
+    padding: 0 18px;
+    gap: 14px;
+  }
+
+  /* 隐藏主页和 Surface 页面的中间导航 */
+  .header .nav {
+    display: none;
+  }
+
+  /*
+    Surface 页面仍然保留：
+    Microsoft | Discover Surface
+  */
+  .surface-header .header-divider,
+  .surface-header .surface-brand {
+    display: block;
+  }
+
+  .surface-header .surface-brand {
+    font-size: 17px;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  /* 隐藏 All Microsoft */
+  .header-actions > button:first-child {
+    display: none;
+  }
+
+  /* Search 只留下图标 */
+  .search-btn > span:first-child {
+    display: none;
+  }
+
+  /* Cart 只留下图标 */
+  .cart-btn > span:first-child {
+    display: none;
+  }
+
+  .search-btn {
+    margin-right: 0;
+  }
+
+  /* 搜索框展开后占满顶部 */
+  .search-panel {
+    left: 0;
+    right: 0;
+    height: 56px;
+    padding: 0 12px;
+  }
+}
+
+
+/* =================================
+   第三阶段：很小的窗口
+   只保留居中的 Microsoft 标志
+   ================================= */
+
+@media (max-width: 640px) {
+  .header {
+    height: 54px;
+    padding: 0 12px;
+
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* 除 Microsoft 标志以外全部隐藏 */
+  .header > :not(.logo) {
+    display: none;
+  }
+
+  .header .logo {
+    margin: 0;
+
+    font-size: 19px;
+    line-height: 1;
+    text-align: center;
+  }
+}
